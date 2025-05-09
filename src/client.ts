@@ -42,5 +42,7 @@ export async function DiscordClient(db: Database) {
         console.error('Event loader error:', e);
     }
 
-    client.login(token);
+    client.login(token).catch((e) => {
+        console.error("Token / Login error:", e);
+    });
 }

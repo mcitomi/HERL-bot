@@ -19,13 +19,13 @@ HERL Discord: https://discord.gg/xvfjbP7C
 A projekt Bun runtime-ban készült, ezt kell feltelepíteni a számítógépre és ennek segítségével futtatni a botot. 
 https://bun.sh/
 
-Csomagok (pl discord könyvtár telepítése):
+**Csomagok (pl discord könyvtár telepítése):**
 
 ```bash
 bun i
 ```
 
-Bot elindítása:
+**Bot elindítása:**
 
 ```bash
 bun run index.ts 
@@ -50,7 +50,8 @@ Ebben a táblában a bot "elemeit", például az aktuális verseny embed azonos�
 
 Ezek az adatok minden új verseny kiírásakor felülíródnak.
 
-Lehetséges elemek:
+Lehetséges elemek (adatbázis felépítésben):
+[name : id]
 - `raceembed`: 'discord embed id'
 - `racedate`: 'yyyy-MM-dd HH:mm'
 - `threadch`: 'discord embed channel id' (ebben a csatornában fogja létrehozni a thread-et, ezt mindig abból a csatornából hozza létre, ahova az embed el lett küldve).
@@ -67,8 +68,10 @@ Ebben a táblában a felhasználók szerepét tárolja a bot az adott versenyhez
 
 Ebből a táblából nem törlődnek az adatok új verseny kiírása esetében sem, a `race` mezővel különböztetjük meg a versenyeket amely az adott verseny embed azonosítóját tartalmazza.
 
-Lehetséges `role` értékek:
+Lehetséges `role` értékek (adatbázis felépítésben):
 - `elfogadva`
 - `elutasitva`
 - `kerdeses`
 - `tartalek`
+
+Ezeket a role értékeket a `src/commands/race` fájlban létrehozott gombok CustomId-je határozza meg, fontos hogy ezeket az azonosítókat ne változtassuk egyéb változtatások nélkül.
