@@ -22,7 +22,7 @@ https://bun.sh/
 Csomagok (pl discord könyvtár telepítése):
 
 ```bash
-bun install
+bun i
 ```
 
 Bot elindítása:
@@ -45,6 +45,11 @@ bun .
 Ebben a táblában a bot "elemeit", például az aktuális verseny embed azonosítóját, időpontját és a csatorna azonosítóját tárolja a program.
 
 Ezek az adatok minden új verseny kiírásakor felülíródnak.
+
+Lehetséges elemek:
+- `raceembed`: 'discord embed id'
+- `racedate`: 'yyyy-MM-dd HH:mm'
+- `threadch`: 'discord embed channel id' (ebben a csatornában fogja létrehozni a thread-et, ezt mindig abból a csatornából hozza létre, ahova az embed el lett küldve).
 
 <hr>
 
