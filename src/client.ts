@@ -36,7 +36,7 @@ export async function DiscordClient(db: Database) {
 
                 client.on(eventName, async (...args) => (await require(eventPath)).execute(client, db, ...args));
 
-                console.log(`${eventFile} event loaded!`);
+                console.log(`[event] - ${eventFile} event loaded!`);
             });
     } catch (e: unknown) {
         console.error('Event loader error:', e);

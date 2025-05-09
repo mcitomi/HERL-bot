@@ -2,8 +2,9 @@
   "name": "herl-bot",
   "module": "index.ts",
   "type": "module",
+  "author": "mcitomi",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "devDependencies": {
     "@types/bun": "latest"
   },

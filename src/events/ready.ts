@@ -23,7 +23,7 @@ export async function execute(client: Client<true>, db: Database) {
             const file = await import(join(process.cwd(), "src", "commands", element));
             commands.push(file.data.toJSON());
             cmdMap.push({ cmd: file.data.toJSON().name, file: element });
-            console.log(`${element} command loaded!`);
+            console.log(`[command] - ${element} command loaded!`);
         }
 
         (new REST({ version: '10' }).setToken(token)).put(Routes.applicationCommands(client.user!.id), {

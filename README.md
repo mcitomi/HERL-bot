@@ -1,17 +1,65 @@
-# herl-bot
+# HERL-bot
+A Hungarian E-Racing League hivatalos Discord botja
 
 HERL Discord: https://discord.gg/xvfjbP7C
 
-To install dependencies:
+<img src="https://imgur.com/YZKEpzl.png" width="200px">
+
+## Config
+
+`config.json` példa:
+```json
+{
+    "token" : "..."
+}
+```
+(A fő mappába kell elhelyezni, az index.ts-el egy szinten).
+
+## Install
+A projekt Bun runtime-ban készült, ezt kell feltelepíteni a számítógépre és ennek segítségével futtatni a botot. 
+https://bun.sh/
+
+Csomagok (pl discord könyvtár telepítése):
 
 ```bash
 bun install
 ```
 
-To run:
+Bot elindítása:
 
 ```bash
-bun run index.ts
+bun run index.ts 
+```
+vagy
+```bash
+bun .
 ```
 
-This project was created using `bun init` in bun v1.2.10. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+## Adatbázis
+### elements tábla:
+
+| **name** | **id** |
+| --- | --- |
+| TEXT | TEXT |
+
+Ebben a táblában a bot "elemeit", például az aktuális verseny embed azonosítóját, időpontját és a csatorna azonosítóját tárolja a program.
+
+Ezek az adatok minden új verseny kiírásakor felülíródnak.
+
+<hr>
+
+### reactedUsers tábla:
+
+| **race** | **userId** | **role** |
+| --- | --- | --- |
+| TEXT | TEXT | TEXT |
+
+Ebben a táblában a felhasználók szerepét tárolja a bot az adott versenyhez.
+
+Ebből a táblából nem törlődnek az adatok új verseny kiírása esetében sem, a `race` mezővel különböztetjük meg a versenyeket amely az adott verseny embed azonosítóját tartalmazza.
+
+Lehetséges `role` értékek:
+- `elfogadva`
+- `elutasitva`
+- `kerdeses`
+- `tartalek`
