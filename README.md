@@ -36,6 +36,10 @@ bun .
 ```
 
 ## Adatbázis
+A Bun környezetbee beépített `bun:sqlite` drivert használja a program az adatbázis (SQLite) kezelésére.
+
+Az adatbázis fájlt (`herl.sqlite`) a fő mappában, az `index.ts`-el egy szinten hozza létre.
+
 ### elements tábla:
 
 | **name** | **id** |
