@@ -30,11 +30,13 @@ export async function execute(client: Client<true>, db: Database) {
             body: commands,
         });
 
-        const raceDate = (await db.query("SELECT id FROM elements WHERE name = 'racedate';").get() as { id: string; }).id;
+        const raceDate = (await db.query("SELECT id FROM elements WHERE name = 'racedate';")?.get() as { id: string; })?.id;
 
-        scheduleEventBefore(new Date(raceDate), 15, () => {
-            createThread(client, db);
-        });
+        if (raceDate) {
+            scheduleEventBefore(new Date(raceDate), 15, () => {
+                createThread(client, db);
+            });
+        }
 
     } catch (e: unknown) {
         console.log('Command loader error:', e);

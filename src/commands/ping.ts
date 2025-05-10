@@ -11,5 +11,5 @@ export async function execute(interaction: CommandInteraction, db: Database, cli
     embed.setDescription(`Latency: ${client.ws.ping}ms`);
     embed.setColor(Colors.Red);
 
-    return interaction.reply({ embeds: [embed] });
+    return interaction.reply({ embeds: [embed], flags: "Ephemeral" });
 }
