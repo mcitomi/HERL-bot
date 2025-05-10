@@ -75,3 +75,6 @@ Lehetséges `role` értékek (adatbázis felépítésben):
 - `tartalek`
 
 Ezeket a role értékeket a `src/commands/race` fájlban létrehozott gombok CustomId-je határozza meg, fontos hogy ezeket az azonosítókat ne változtassuk egyéb változtatások nélkül.
+
+## Bugok / Tervek
+- [ ] Ami után létrehozza a bot a threadet, ne lehessen változtatni a felhasználóknak a pozícióját, gombok eltűntetése (egyéb embed változtatások).
