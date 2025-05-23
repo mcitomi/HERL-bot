@@ -1,7 +1,7 @@
 # HERL-bot
 A Hungarian E-Racing League hivatalos Discord botja
 
-HERL Discord: https://discord.gg/xvfjbP7C
+HERL Discord: [https://discord.gg/xvfjbP7C](https://discord.gg/pBJph7kDjT)
 
 <img src="https://imgur.com/YZKEpzl.png" width="200px">
 
